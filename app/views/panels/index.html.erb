@@ -1,0 +1,19 @@
+<% title "Panels" %>
+
+<table>
+  <tr>
+    <th>Caption</th>
+    <th>Issue</th>
+  </tr>
+  <% for panel in @panels %>
+    <tr>
+      <td><%=h panel.caption %></td>
+      <td><%=h panel.issue_id %></td>
+      <td><%= link_to "Show", panel %></td>
+      <td><%= link_to "Edit", edit_panel_path(panel) %></td>
+      <td><%= link_to "Destroy", panel, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Panel", new_panel_path %></p>

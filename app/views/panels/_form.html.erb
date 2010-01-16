@@ -1,0 +1,12 @@
+<% form_for @panel do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :caption %><br />
+    <%= f.text_field :caption %>
+  </p>
+  <p>
+    <%= f.label :issue_id %><br />
+    <%= f.text_field :issue_id %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

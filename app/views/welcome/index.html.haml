@@ -1,0 +1,8 @@
+%h1 Latest Issue
+
+%h2= h @issue.title
+
+= h @issue.content
+
+%p
+  %a{:href => edit_issue_path(@issue)} Edit this issue

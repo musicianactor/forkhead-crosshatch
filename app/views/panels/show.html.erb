@@ -1,0 +1,16 @@
+<% title "Panel" %>
+
+<p>
+  <strong>Caption:</strong>
+  <%=h @panel.caption %>
+</p>
+<p>
+  <strong>Issue:</strong>
+  <%=h @panel.issue_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_panel_path(@panel) %> |
+  <%= link_to "Destroy", @panel, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", panels_path %>
+</p>

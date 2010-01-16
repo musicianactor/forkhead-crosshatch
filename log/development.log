@@ -1,0 +1,663 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (11.6ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (72.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateIssues (20100115034528)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE TABLE "issues" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100115034528')[0m
+Migrating to CreatePanels (20100115034955)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "panels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "caption" varchar(255), "issue_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100115034955')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("issues")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("panels")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateIssues (20100115034528)
+Migrating to CreatePanels (20100115034955)
+Migrating to AddAttachmentsImageToPanel (20100115035204)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "panels" ADD "image_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "panels" ADD "image_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "panels" ADD "image_file_size" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "panels" ADD "image_updated_at" datetime[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100115035204')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("issues")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("panels")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-14 20:55:41) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 20:56:52) [GET]
+
+ActionView::MissingTemplate (Missing template welcome/index.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 20:57:33) [GET]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `latest' for #<Class:0x2631724>):
+  app/controllers/welcome_controller.rb:4:in `index'
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 20:57:43) [GET]
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `latest' for #<Class:0x2524aac>):
+  app/controllers/welcome_controller.rb:4:in `index'
+
+Rendered rescues/_trace (31.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateIssues (20100115034528)
+Migrating to CreatePanels (20100115034955)
+Migrating to AddAttachmentsImageToPanel (20100115035204)
+Migrating to AddStatusToIssues (20100115035909)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mALTER TABLE "issues" ADD "status" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100115035909')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("issues")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("panels")[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:02:35) [GET]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `latest' for #<Class:0x240e6e0>):
+  app/controllers/welcome_controller.rb:4:in `index'
+
+Rendered rescues/_trace (34.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:04:23) [GET]
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `latest' for #<Class:0x264e004>):
+  app/controllers/welcome_controller.rb:4:in `index'
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:04:30) [GET]
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `latest' for #<Class:0x253e664>):
+  app/controllers/welcome_controller.rb:4:in `index'
+
+Rendered rescues/_trace (30.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:04:34) [GET]
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `latest' for #<Class:0x242a14c>):
+  app/controllers/welcome_controller.rb:4:in `index'
+
+Rendered rescues/_trace (31.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:04:45) [GET]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `latest' for #<Class:0x2678cdc>):
+  app/controllers/welcome_controller.rb:4:in `index'
+
+Rendered rescues/_trace (31.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:05:44) [GET]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `latest' for #<Class:0x23b2c00>):
+  app/controllers/welcome_controller.rb:4:in `index'
+
+Rendered rescues/_trace (35.6ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:13:19) [GET]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `latest' for #<Class:0x23b2c00>):
+  app/controllers/welcome_controller.rb:4:in `index'
+
+Rendered rescues/_trace (35.7ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:14:15) [GET]
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `latest' for #<Class:0x261e7a0>):
+  app/controllers/welcome_controller.rb:4:in `index'
+
+Rendered rescues/_trace (30.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:15:26) [GET]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `latest' for #<Class:0x24e48f8>):
+  app/controllers/welcome_controller.rb:5:in `index'
+
+Rendered rescues/_trace (31.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:15:44) [GET]
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `latest' for #<Class:0x23caaf8>):
+  app/controllers/welcome_controller.rb:5:in `index'
+
+Rendered rescues/_trace (34.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mIssue Load (0.3ms)[0m   [0mSELECT * FROM "issues" LIMIT 1[0m
+  [4;36;1mIssue Load (0.2ms)[0m   [0;1mSELECT * FROM "issues" [0m
+WARNING: Can't mass-assign these protected attributes: status
+  [4;35;1mIssue Create (0.6ms)[0m   [0mINSERT INTO "issues" ("status", "updated_at", "title", "content", "created_at") VALUES(NULL, '2010-01-15 04:18:36', 'Hello, world', 'Hola!', '2010-01-15 04:18:36')[0m
+  [4;36;1mIssue Load (0.4ms)[0m   [0;1mSELECT * FROM "issues" [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mIssue Load (1.3ms)[0m   [0;1mSELECT * FROM "issues" WHERE ("issues"."status" = 'active') ORDER BY created_at LIMIT 1[0m
+  [4;35;1mIssue Load (0.3ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues"."status" = 'active') [0m
+  [4;36;1mIssue Load (0.5ms)[0m   [0;1mSELECT * FROM "issues" [0m
+  [4;35;1mIssue Load (0.4ms)[0m   [0mSELECT * FROM "issues" LIMIT 1[0m
+  [4;36;1mIssue Update (0.8ms)[0m   [0;1mUPDATE "issues" SET "status" = 'active', "updated_at" = '2010-01-15 04:21:38' WHERE "id" = 1[0m
+  [4;35;1mIssue Load (0.4ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues"."status" = 'active') [0m
+  [4;36;1mIssue Load (1.0ms)[0m   [0;1mSELECT * FROM "issues" WHERE ("issues"."status" = 'active') ORDER BY created_at LIMIT 1[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:22:10) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 68ms (View: 64, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:23:25) [GET]
+
+ActionView::MissingTemplate (Missing template welcome/index.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:25:31) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+
+ActionView::TemplateError (Illegal element: classes and ids must have values.) on line #1 of app/views/welcome/index.html.haml:
+1: %h1. Latest Issue
+2: p <%=h @issue.title %>
+
+    app/views/welcome/index.html.haml:1
+    haml (2.2.14) lib/haml/precompiler.rb:671:in `render_tag'
+    haml (2.2.14) lib/haml/precompiler.rb:213:in `process_line'
+    haml (2.2.14) lib/haml/precompiler.rb:177:in `precompile'
+    haml (2.2.14) lib/haml/engine.rb:114:in `initialize'
+    haml (2.2.14) rails/./lib/haml/template/plugin.rb:21:in `new'
+    haml (2.2.14) rails/./lib/haml/template/plugin.rb:21:in `compile'
+    haml (2.2.14) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.14) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.14) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (44.5ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:25:51) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:26:00) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:26:01) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:26:24) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined method `title' for #<Class:0x235a3d4>) on line #2 of app/views/welcome/index.html.haml:
+1: %h1 Latest Issue
+2: %p= h @issue.title
+
+    app/views/welcome/index.html.haml:2:in `_run_haml_app47views47welcome47index46html46haml'
+    haml (2.2.14) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.14) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.14) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (116.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:27:43) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined method `title' for #<Class:0x24fb8a0>) on line #2 of app/views/welcome/index.html.haml:
+1: %h1 Latest Issue
+2: %p= h @issue.title
+
+    app/views/welcome/index.html.haml:2:in `_run_haml_app47views47welcome47index46html46haml'
+    haml (2.2.14) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.14) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.14) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (46.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:28:22) [GET]
+Rendering template within layouts/application
+Rendering welcome/index
+  [4;36;1mIssue Load (1.0ms)[0m   [0;1mSELECT * FROM "issues" WHERE ("issues"."status" = 'active') ORDER BY created_at LIMIT 1[0m
+Completed in 89ms (View: 85, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:28:40) [GET]
+  [4;35;1mIssue Load (1.0ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues"."status" = 'active') ORDER BY created_at LIMIT 1[0m
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:28:56) [GET]
+  [4;36;1mIssue Load (0.9ms)[0m   [0;1mSELECT * FROM "issues" WHERE ("issues"."status" = 'active') ORDER BY created_at LIMIT 1[0m
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:29:14) [GET]
+  [4;35;1mIssue Load (1.0ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues"."status" = 'active') ORDER BY created_at LIMIT 1[0m
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:29:44) [GET]
+  [4;36;1mIssue Load (0.9ms)[0m   [0;1mSELECT * FROM "issues" WHERE ("issues"."status" = 'active') ORDER BY created_at LIMIT 1[0m
+Rendering template within layouts/application
+Rendering welcome/index
+
+ActionView::TemplateError (undefined method `path_for' for #<ActionView::Base:0x24a2fac>) on line #4 of app/views/welcome/index.html.haml:
+1: %h1 Latest Issue
+2: %h2= h @issue.title
+3: = h @issue.content
+4: %a{:href => path_for(@issue)}
+
+    app/views/welcome/index.html.haml:4:in `_run_haml_app47views47welcome47index46html46haml'
+    haml (2.2.14) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.14) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.14) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (38.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:30:02) [GET]
+  [4;35;1mIssue Load (1.1ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues"."status" = 'active') ORDER BY created_at LIMIT 1[0m
+Rendering template within layouts/application
+Rendering welcome/index
+
+ActionView::TemplateError (undefined method `edit_path_for' for #<ActionView::Base:0x22b97cc>) on line #4 of app/views/welcome/index.html.haml:
+1: %h1 Latest Issue
+2: %h2= h @issue.title
+3: = h @issue.content
+4: %a{:href => edit_path_for(@issue)}
+
+    app/views/welcome/index.html.haml:4:in `_run_haml_app47views47welcome47index46html46haml'
+    haml (2.2.14) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.14) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.14) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (38.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:30:08) [GET]
+  [4;36;1mIssue Load (1.7ms)[0m   [0;1mSELECT * FROM "issues" WHERE ("issues"."status" = 'active') ORDER BY created_at LIMIT 1[0m
+Rendering template within layouts/application
+Rendering welcome/index
+
+ActionView::TemplateError (undefined method `edit_path' for #<ActionView::Base:0x248c84c>) on line #4 of app/views/welcome/index.html.haml:
+1: %h1 Latest Issue
+2: %h2= h @issue.title
+3: = h @issue.content
+4: %a{:href => edit_path(@issue)}
+
+    app/views/welcome/index.html.haml:4:in `_run_haml_app47views47welcome47index46html46haml'
+    haml (2.2.14) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.14) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.14) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (38.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:31:28) [GET]
+  [4;35;1mIssue Load (0.9ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues"."status" = 'active') ORDER BY created_at LIMIT 1[0m
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:31:40) [GET]
+  [4;36;1mIssue Load (0.9ms)[0m   [0;1mSELECT * FROM "issues" WHERE ("issues"."status" = 'active') ORDER BY created_at LIMIT 1[0m
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:31:49) [GET]
+  [4;35;1mIssue Load (0.9ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues"."status" = 'active') ORDER BY created_at LIMIT 1[0m
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing IssuesController#edit (for 127.0.0.1 at 2010-01-14 21:31:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mIssue Load (0.2ms)[0m   [0;1mSELECT * FROM "issues" WHERE ("issues"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering issues/edit
+Rendered issues/_form (66.6ms)
+Completed in 83ms (View: 78, DB: 0) | 200 OK [http://0.0.0.0/issues/1/edit]
+
+
+Processing IssuesController#update (for 127.0.0.1 at 2010-01-14 21:31:59) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"A+PfPXMYVa3kIUOLltN8q0I583SDbbJr9EjkSPBtkDs=", "id"=>"1", "issue"=>{"title"=>"Hello, world", "content"=>"Hola! This is the first issue."}}
+  [4;35;1mIssue Load (0.3ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues"."id" = 1) [0m
+  [4;36;1mIssue Update (0.4ms)[0m   [0;1mUPDATE "issues" SET "content" = 'Hola! This is the first issue.', "updated_at" = '2010-01-15 04:31:59' WHERE "id" = 1[0m
+Redirected to http://0.0.0.0:3000/issues/1
+Completed in 12ms (DB: 1) | 302 Found [http://0.0.0.0/issues/1]
+
+
+Processing IssuesController#show (for 127.0.0.1 at 2010-01-14 21:31:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mIssue Load (1.1ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering issues/show
+Completed in 18ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/issues/1]
+
+
+Processing IssuesController#show (for 127.0.0.1 at 2010-01-14 21:32:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mIssue Load (0.2ms)[0m   [0;1mSELECT * FROM "issues" WHERE ("issues"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering issues/show
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://0.0.0.0/issues/1]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:32:52) [GET]
+  [4;35;1mIssue Load (0.9ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues"."status" = 'active') ORDER BY created_at LIMIT 1[0m
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateIssues (20100115034528)
+Migrating to CreatePanels (20100115034955)
+Migrating to AddAttachmentsImageToPanel (20100115035204)
+Migrating to AddStatusToIssues (20100115035909)
+Migrating to AddPositionToPanels (20100115043540)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "panels" ADD "position" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100115043540')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("issues")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("panels")[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-14 21:36:45) [GET]
+  [4;36;1mIssue Load (1.6ms)[0m   [0;1mSELECT * FROM "issues" WHERE ("issues"."status" = 'active') ORDER BY created_at LIMIT 1[0m
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 116ms (View: 80, DB: 2) | 200 OK [http://0.0.0.0/]
+
+
+Processing IssuesController#edit (for 127.0.0.1 at 2010-01-14 21:36:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mIssue Load (0.2ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering issues/edit
+Rendered issues/_form (15.8ms)
+Completed in 34ms (View: 27, DB: 0) | 200 OK [http://0.0.0.0/issues/1/edit]
+
+
+Processing IssuesController#edit (for 127.0.0.1 at 2010-01-14 21:39:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mIssue Load (0.2ms)[0m   [0;1mSELECT * FROM "issues" WHERE ("issues"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering issues/edit
+
+ActionView::TemplateError (Illegal nesting: nesting within plain text is illegal.) on line #3 of app/views/issues/_form.html.haml:
+1: form_for @issue do |f|
+2: 
+3:   = f.error_messages
+4: 
+5:   %p
+6:     = f.label :title
+
+    app/views/issues/_form.html.haml:3
+    haml (2.2.14) lib/haml/precompiler.rb:337:in `push_plain'
+    haml (2.2.14) lib/haml/precompiler.rb:270:in `process_line'
+    haml (2.2.14) lib/haml/precompiler.rb:177:in `precompile'
+    haml (2.2.14) lib/haml/engine.rb:114:in `initialize'
+    haml (2.2.14) rails/./lib/haml/template/plugin.rb:21:in `new'
+    haml (2.2.14) rails/./lib/haml/template/plugin.rb:21:in `compile'
+    haml (2.2.14) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/issues/edit.html.erb:3
+    haml (2.2.14) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.14) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.14) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (56.7ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing IssuesController#edit (for 127.0.0.1 at 2010-01-14 21:39:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mIssue Load (0.2ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering issues/edit
+Rendered issues/_form (5.2ms)
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/issues/1/edit]
+
+
+Processing IssuesController#edit (for 127.0.0.1 at 2010-01-14 21:39:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mIssue Load (0.3ms)[0m   [0;1mSELECT * FROM "issues" WHERE ("issues"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering issues/edit
+Rendered issues/_form (5.1ms)
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/issues/1/edit]
+
+
+Processing IssuesController#edit (for 127.0.0.1 at 2010-01-14 21:39:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mIssue Load (0.2ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering issues/edit
+Rendered issues/_form (5.2ms)
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/issues/1/edit]
+
+
+Processing IssuesController#edit (for 127.0.0.1 at 2010-01-14 21:40:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mIssue Load (0.2ms)[0m   [0;1mSELECT * FROM "issues" WHERE ("issues"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering issues/edit
+Rendered issues/_form (5.4ms)
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://0.0.0.0/issues/1/edit]
+
+
+Processing IssuesController#edit (for 127.0.0.1 at 2010-01-14 21:43:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mIssue Load (0.2ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering issues/edit
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM "panels" WHERE ("panels".issue_id = 1) [0m
+Rendered issues/_form (24.1ms)
+Completed in 35ms (View: 29, DB: 0) | 200 OK [http://0.0.0.0/issues/1/edit]

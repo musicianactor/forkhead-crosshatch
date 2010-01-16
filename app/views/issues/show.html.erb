@@ -1,0 +1,16 @@
+<% title "Issue" %>
+
+<p>
+  <strong>Title:</strong>
+  <%=h @issue.title %>
+</p>
+<p>
+  <strong>Content:</strong>
+  <%=h @issue.content %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_issue_path(@issue) %> |
+  <%= link_to "Destroy", @issue, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", issues_path %>
+</p>
