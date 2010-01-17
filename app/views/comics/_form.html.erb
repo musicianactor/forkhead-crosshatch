@@ -1,0 +1,16 @@
+<% form_for @comic do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :about %><br />
+    <%= f.text_area :about %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

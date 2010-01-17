@@ -1,0 +1,20 @@
+<% title "Comic" %>
+
+<p>
+  <strong>Title:</strong>
+  <%=h @comic.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=h @comic.description %>
+</p>
+<p>
+  <strong>About:</strong>
+  <%=h @comic.about %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_comic_path(@comic) %> |
+  <%= link_to "Destroy", @comic, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", comics_path %>
+</p>

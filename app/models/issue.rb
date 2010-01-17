@@ -1,6 +1,8 @@
 class Issue < ActiveRecord::Base
   attr_accessible :title, :content, :panels_attributes
   
+  belongs_to :comic
+  
   has_many :panels
   
   accepts_nested_attributes_for :panels, :allow_destroy => true

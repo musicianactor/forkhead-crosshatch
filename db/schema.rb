@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100115043540) do
+ActiveRecord::Schema.define(:version => 20100117062010) do
+
+  create_table "comics", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "about"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "issues", :force => true do |t|
     t.string   "title"
@@ -17,6 +25,8 @@ ActiveRecord::Schema.define(:version => 20100115043540) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "status"
+    t.text     "notes"
+    t.integer  "comic_id"
   end
 
   create_table "panels", :force => true do |t|

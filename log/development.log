@@ -661,3 +661,315 @@ Rendering issues/edit
   [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM "panels" WHERE ("panels".issue_id = 1) [0m
 Rendered issues/_form (24.1ms)
 Completed in 35ms (View: 29, DB: 0) | 200 OK [http://0.0.0.0/issues/1/edit]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateIssues (20100115034528)
+Migrating to CreatePanels (20100115034955)
+Migrating to AddAttachmentsImageToPanel (20100115035204)
+Migrating to AddStatusToIssues (20100115035909)
+Migrating to AddPositionToPanels (20100115043540)
+Migrating to AddNotesToIssues (20100117054536)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mALTER TABLE "issues" ADD "notes" text[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100117054536')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("issues")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("panels")[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-01-16 23:12:05) [GET]
+  [4;36;1mIssue Load (1.7ms)[0m   [0;1mSELECT * FROM "issues" WHERE ("issues"."status" = 'active') ORDER BY created_at LIMIT 1[0m
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 192ms (View: 129, DB: 2) | 200 OK [http://0.0.0.0/]
+
+
+Processing IssuesController#edit (for 127.0.0.1 at 2010-01-16 23:12:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mIssue Load (0.3ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering issues/edit
+  [4;36;1mPanel Load (20.6ms)[0m   [0;1mSELECT * FROM "panels" WHERE ("panels".issue_id = 1) [0m
+Rendered issues/_form (112.1ms)
+Completed in 133ms (View: 106, DB: 21) | 200 OK [http://0.0.0.0/issues/1/edit]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateIssues (20100115034528)
+Migrating to CreatePanels (20100115034955)
+Migrating to AddAttachmentsImageToPanel (20100115035204)
+Migrating to AddStatusToIssues (20100115035909)
+Migrating to AddPositionToPanels (20100115043540)
+Migrating to AddNotesToIssues (20100117054536)
+Migrating to CreateComics (20100117061402)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "comics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "about" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100117061402')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comics")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("issues")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("panels")[0m
+
+
+Processing ComicsController#index (for 127.0.0.1 at 2010-01-16 23:15:43) [GET]
+  [4;36;1mComic Load (0.5ms)[0m   [0;1mSELECT * FROM "comics" [0m
+Rendering template within layouts/application
+Rendering comics/index
+Completed in 29ms (View: 24, DB: 0) | 200 OK [http://0.0.0.0/comics]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateIssues (20100115034528)
+Migrating to CreatePanels (20100115034955)
+Migrating to AddAttachmentsImageToPanel (20100115035204)
+Migrating to AddStatusToIssues (20100115035909)
+Migrating to AddPositionToPanels (20100115043540)
+Migrating to AddNotesToIssues (20100117054536)
+Migrating to CreateComics (20100117061402)
+Migrating to TieIssuesToComics (20100117062010)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mALTER TABLE "issues" ADD "comic_id" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100117062010')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comics")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("issues")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("panels")[0m
+
+
+Processing ComicsController#index (for 127.0.0.1 at 2010-01-16 23:22:31) [GET]
+  [4;36;1mComic Load (0.5ms)[0m   [0;1mSELECT * FROM "comics" LIMIT 1[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.issues):
+  app/controllers/comics_controller.rb:4:in `index'
+  haml (2.2.17) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (32.3ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ComicsController#index (for 127.0.0.1 at 2010-01-16 23:22:35) [GET]
+  [4;35;1mComic Load (0.4ms)[0m   [0mSELECT * FROM "comics" LIMIT 1[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.issues):
+  app/controllers/comics_controller.rb:4:in `index'
+  haml (2.2.17) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (32.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ComicsController#new (for 127.0.0.1 at 2010-01-16 23:22:53) [GET]
+Rendering template within layouts/application
+Rendering comics/new
+Rendered comics/_form (85.4ms)
+Completed in 115ms (View: 105, DB: 0) | 200 OK [http://0.0.0.0/comics/new]
+
+
+Processing ComicsController#create (for 127.0.0.1 at 2010-01-16 23:23:16) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"A+PfPXMYVa3kIUOLltN8q0I583SDbbJr9EjkSPBtkDs=", "comic"=>{"title"=>"Do you Dream in Color?", "about"=>"Hai!", "description"=>"Blagedy blue!"}}
+  [4;36;1mComic Create (0.8ms)[0m   [0;1mINSERT INTO "comics" ("updated_at", "title", "description", "about", "created_at") VALUES('2010-01-17 06:23:16', 'Do you Dream in Color?', 'Blagedy blue!', 'Hai!', '2010-01-17 06:23:16')[0m
+Redirected to http://0.0.0.0:3000/comics/1
+Completed in 12ms (DB: 1) | 302 Found [http://0.0.0.0/comics]
+
+
+Processing ComicsController#show (for 127.0.0.1 at 2010-01-16 23:23:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mComic Load (0.2ms)[0m   [0mSELECT * FROM "comics" WHERE ("comics"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering comics/show
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/comics/1]
+
+
+Processing ComicsController#index (for 127.0.0.1 at 2010-01-16 23:23:19) [GET]
+  [4;36;1mComic Load (0.6ms)[0m   [0;1mSELECT * FROM "comics" LIMIT 1[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.issues):
+  app/controllers/comics_controller.rb:4:in `index'
+  haml (2.2.17) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (30.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ComicsController#index (for 127.0.0.1 at 2010-01-16 23:23:48) [GET]
+  [4;35;1mComic Load (0.8ms)[0m   [0mSELECT * FROM "comics" LIMIT 1[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.issues):
+  app/controllers/comics_controller.rb:4:in `index'
+  haml (2.2.17) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (102.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ComicsController#index (for 127.0.0.1 at 2010-01-16 23:23:59) [GET]
+  [4;36;1mComic Load (0.6ms)[0m   [0;1mSELECT * FROM "comics" LIMIT 1[0m
+Rendering template within layouts/application
+Rendering comics/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/comics/index.html.erb:
+6:     <th>Description</th>
+7:     <th>About</th>
+8:   </tr>
+9:   <% for comic in @comics %>
+10:     <tr>
+11:       <td><%=h comic.title %></td>
+12:       <td><%=h comic.description %></td>
+
+    app/views/comics/index.html.erb:9
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (41.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ComicsController#index (for 127.0.0.1 at 2010-01-16 23:26:14) [GET]
+  [4;35;1mComic Load (0.5ms)[0m   [0mSELECT * FROM "comics" LIMIT 1[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.issues):
+  app/controllers/comics_controller.rb:4:in `index'
+  haml (2.2.17) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (31.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ComicsController#index (for 127.0.0.1 at 2010-01-16 23:26:25) [GET]
+  [4;36;1mComic Load (0.6ms)[0m   [0;1mSELECT * FROM "comics" LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `most_recent' for #<Class:0x22d6048>):
+  app/controllers/comics_controller.rb:4:in `index'
+  haml (2.2.17) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (35.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ComicsController#index (for 127.0.0.1 at 2010-01-16 23:26:49) [GET]
+  [4;36;1mComic Load (0.6ms)[0m   [0;1mSELECT * FROM "comics" LIMIT 1[0m
+Rendering template within layouts/application
+Rendering comics/index
+  [4;35;1mIssue Load (0.7ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues".comic_id = 1) AND ("issues".comic_id = 1) ORDER BY created_at LIMIT 1[0m
+
+ActionView::TemplateError (undefined method `title' for []:Array) on line #3 of app/views/comics/index.html.erb:
+1: <% title "Comics" %>
+2: 
+3: <h1><%= @issue.title %></h1>
+
+    app/views/comics/index.html.erb:3
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (47.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ComicsController#index (for 127.0.0.1 at 2010-01-16 23:27:20) [GET]
+  [4;36;1mComic Load (0.6ms)[0m   [0;1mSELECT * FROM "comics" LIMIT 1[0m
+  [4;35;1mIssue Load (12.1ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues".comic_id = 1) AND ("issues".comic_id = 1) ORDER BY created_at LIMIT 1[0m
+Rendering template within layouts/application
+Rendering comics/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.title) on line #3 of app/views/comics/index.html.erb:
+1: <% title "Comics" %>
+2: 
+3: <h1><%= @issue.title %></h1>
+
+    app/views/comics/index.html.erb:3
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (38.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing IssuesController#index (for 127.0.0.1 at 2010-01-16 23:27:33) [GET]
+  [4;36;1mIssue Load (0.6ms)[0m   [0;1mSELECT * FROM "issues" [0m
+Rendering template within layouts/application
+Rendering issues/index
+Completed in 50ms (View: 44, DB: 1) | 200 OK [http://0.0.0.0/issues]
+
+
+Processing IssuesController#edit (for 127.0.0.1 at 2010-01-16 23:27:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mIssue Load (0.2ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering issues/edit
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM "panels" WHERE ("panels".issue_id = 1) [0m
+Rendered issues/_form (10.5ms)
+Completed in 26ms (View: 19, DB: 0) | 200 OK [http://0.0.0.0/issues/1/edit]
+  [4;36;1mIssue Load (0.6ms)[0m   [0;1mSELECT * FROM "issues" LIMIT 1[0m
+  [4;35;1mIssue Load (0.4ms)[0m   [0mSELECT * FROM "issues" LIMIT 1[0m
+  [4;36;1mIssue Update (1.1ms)[0m   [0;1mUPDATE "issues" SET "comic_id" = 1, "updated_at" = '2010-01-17 06:28:30' WHERE "id" = 1[0m
+
+
+Processing ComicsController#index (for 127.0.0.1 at 2010-01-16 23:29:05) [GET]
+  [4;36;1mComic Load (0.7ms)[0m   [0;1mSELECT * FROM "comics" LIMIT 1[0m
+  [4;35;1mIssue Load (0.9ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues".comic_id = 1) AND ("issues".comic_id = 1) ORDER BY created_at LIMIT 1[0m
+Rendering template within layouts/application
+Rendering comics/index
+Completed in 47ms (View: 16, DB: 2) | 200 OK [http://0.0.0.0/comics]
+
+
+Processing ComicsController#index (for 127.0.0.1 at 2010-01-16 23:29:33) [GET]
+  [4;36;1mComic Load (0.6ms)[0m   [0;1mSELECT * FROM "comics" LIMIT 1[0m
+  [4;35;1mIssue Load (0.7ms)[0m   [0mSELECT * FROM "issues" WHERE ("issues".comic_id = 1) AND ("issues".comic_id = 1) ORDER BY created_at LIMIT 1[0m
+Rendering template within layouts/application
+Rendering comics/index
+Completed in 20ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/comics]
